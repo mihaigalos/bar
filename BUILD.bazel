@@ -13,7 +13,7 @@ go_library(
         "bar.go",
     ],
     importpath = "github.com/mihaigalos/bar",
-    visibility = ["//visibility:private"],
+    visibility = ["//visibility:public"],
 )
 
 go_binary(
