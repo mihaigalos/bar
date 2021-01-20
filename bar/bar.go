@@ -20,18 +20,22 @@ func (bar *Bar) New(start, stop int) {
 	bar.current = start
 	bar.stop = stop
 	bar.symbol = "█"
-	bar.percent = bar.Percent()
+	bar.percent = bar.GetPercent()
 	bar.SetInitialProgress()
 }
 
-func (bar *Bar) Percent() int {
+func (bar *Bar) GetPercent() int {
 	return int(float32(bar.current) / float32(bar.stop) * 100)
+}
+
+func (bar *Bar) GetCurrent() int {
+	return bar.current
 }
 
 func (bar *Bar) Update(current int) {
 	bar.current = current
 	last := bar.percent
-	bar.percent = bar.Percent()
+	bar.percent = bar.GetPercent()
 	if bar.percent != last && bar.percent%2 == 0 {
 		bar.progress += bar.symbol
 	}
