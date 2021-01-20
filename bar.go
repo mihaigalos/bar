@@ -3,10 +3,10 @@ package main
 import "fmt"
 
 type Bar struct {
-	current  int64
-	percent  int64
+	current  int
+	percent  int
 	progress string
-	stop     int64
+	stop     int
 	symbol   string
 }
 
@@ -16,7 +16,7 @@ func (bar *Bar) SetInitialProgress() {
 	}
 }
 
-func (bar *Bar) New(start, stop int64) {
+func (bar *Bar) New(start, stop int) {
 	bar.current = start
 	bar.stop = stop
 	bar.symbol = "█"
@@ -24,11 +24,11 @@ func (bar *Bar) New(start, stop int64) {
 	bar.SetInitialProgress()
 }
 
-func (bar *Bar) Percent() int64 {
-	return int64(float32(bar.current) / float32(bar.stop) * 100)
+func (bar *Bar) Percent() int {
+	return int(float32(bar.current) / float32(bar.stop) * 100)
 }
 
-func (bar *Bar) Update(current int64) {
+func (bar *Bar) Update(current int) {
 	bar.current = current
 	last := bar.percent
 	bar.percent = bar.Percent()
