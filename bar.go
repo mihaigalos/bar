@@ -35,7 +35,7 @@ func (bar *Bar) Update(current int) {
 	if bar.percent != last && bar.percent%2 == 0 {
 		bar.progress += bar.symbol
 	}
-	fmt.Printf("\r[%-50s]%3d%% %8d/%d", bar.progress, bar.percent, bar.current, bar.stop)
+	fmt.Printf("\r[%-50s]%3d%%", bar.progress, bar.percent)
 }
 
 func (bar *Bar) Finish() {
