@@ -3,7 +3,7 @@ package main
 import (
 	"time"
 
-	"github.com/mihaigalos/bar"
+	"github.com/mihaigalos/go-bar/bar"
 )
 
 func main() {

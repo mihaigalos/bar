@@ -1,15 +1,7 @@
-load("@io_bazel_rules_go//go:def.bzl", "go_library")
 load("@bazel_gazelle//:def.bzl", "gazelle")
 load("@com_github_bazelbuild_buildtools//buildifier:def.bzl", "buildifier")
 
 buildifier(name = "buildifier")
 
-# gazelle:prefix github.com/mihaigalos/bar
+# gazelle:prefix github.com/mihaigalos/go-bar
 gazelle(name = "gazelle")
-
-go_library(
-    name = "bar_lib",
-    srcs = ["bar.go"],
-    importpath = "github.com/mihaigalos/bar",
-    visibility = ["//visibility:public"],
-)
