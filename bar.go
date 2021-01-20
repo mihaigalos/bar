@@ -3,10 +3,10 @@ package main
 import "fmt"
 
 type Bar struct {
-	percent  int64
 	current  int64
-	stop     int64
+	percent  int64
 	progress string
+	stop     int64
 	symbol   string
 }
 
