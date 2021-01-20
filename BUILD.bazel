@@ -17,8 +17,8 @@ go_library(
 )
 
 go_binary(
-    name = "bar",
-    srcs = ["main.go"],
+    name = "example_main",
+    srcs = ["examples/main.go"],
     embed = [":bar_lib"],
     visibility = ["//visibility:public"],
 )
