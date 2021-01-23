@@ -1,8 +1,16 @@
-load("@io_bazel_rules_go//go:def.bzl", "go_library")
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
 
 go_library(
     name = "bar",
     srcs = ["bar.go"],
     importpath = "github.com/mihaigalos/go-bar/bar",
     visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "unit_tests",
+    srcs = [
+        "unit_typical_test.go",
+    ],
+    embed = [":bar"],
 )

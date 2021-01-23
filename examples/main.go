@@ -8,9 +8,9 @@ import (
 
 func main() {
 	var bar bar.Bar
-	bar.New(0, 100)
-	for i := 0; i <= 100; i++ {
-		time.Sleep(100 * time.Millisecond)
+	bar.New(0, 248)
+	for i := 0; i <= 248; i++ {
+		time.Sleep(10 * time.Millisecond)
 		bar.Update(i)
 	}
 	bar.Finish()
